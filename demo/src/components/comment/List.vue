@@ -18,6 +18,7 @@
 
 <script>
 import store from '@/store'
+// import uS from '@unrest/story'
 
 const css = {
   list: 'mb-8',
@@ -31,6 +32,11 @@ const css = {
 export default {
   data() {
     return { css }
+  },
+  mounted() {
+    // ['like', 'dislike', 'delete_'].forEach(key => {
+    //   this[key] = uS.Story(key, this[key])
+    // })
   },
   computed: {
     comments: store.comment.all

@@ -16,7 +16,7 @@ const add = ({text, username}) => state.list.push({
 export default {
   all: () => state.list.slice(),
   like: (comment) => comment.likes ++,
-  dislike: (comment) => console.log('dis') || comment.likes --,
+  dislike: (comment) => comment.likes --,
   delete: (comment) => state.list = state.list.filter(c => c !== comment),
   add,
 }
