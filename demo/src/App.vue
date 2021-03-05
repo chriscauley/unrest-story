@@ -5,18 +5,18 @@
       <comment-list />
       <comment-form />
     </div>
-    <!-- <story-card /> -->
+    <story-card />
   </div>
 </template>
 
 <script>
 import CommentForm from '@/components/comment/Form'
 import CommentList from '@/components/comment/List'
-// import { StoryCard } from '@unrest/story'
+import { StoryCard } from '@unrest/story'
 import store from '@/store'
 
 export default {
-  components: { CommentForm, CommentList },
+  components: { CommentForm, CommentList, StoryCard },
   name: 'App',
   computed: {
     comment_count: () => store.comment.all().length

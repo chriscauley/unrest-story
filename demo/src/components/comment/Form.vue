@@ -17,7 +17,7 @@
 
 <script>
 import store from '@/store'
-// import uS from '@unrest/story'
+import uS from '@unrest/story'
 
 const css = {
   input: 'border mb-2 w-full',
@@ -25,8 +25,8 @@ const css = {
   err: 'text-red-800 mb-2',
 }
 
-// uS.Story('add comment')
-// uS.Story('invalid form')
+uS.Story('add comment')
+uS.Story('invalid form')
 
 export default {
   data() {
@@ -38,11 +38,11 @@ export default {
       this.error = null
       if (!text || !username) {
         this.error = 'You must specify both a username and a comment'
-        // uS.doStory('invalid form')
+        uS.doStory('invalid form')
       } else {
         store.comment.add({ text, username })
         this.text = this.username = ''
-        // uS.doStory('add comment')
+        uS.doStory('add comment')
       }
     }
   }

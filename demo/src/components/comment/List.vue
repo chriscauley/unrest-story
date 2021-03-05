@@ -18,7 +18,7 @@
 
 <script>
 import store from '@/store'
-// import uS from '@unrest/story'
+import uS from '@unrest/story'
 
 const css = {
   list: 'mb-8',
@@ -33,18 +33,13 @@ export default {
   data() {
     return { css }
   },
-  mounted() {
-    // ['like', 'dislike', 'delete_'].forEach(key => {
-    //   this[key] = uS.Story(key, this[key])
-    // })
-  },
   computed: {
     comments: store.comment.all
   },
   methods: {
-    like: store.comment.like,
-    dislike: store.comment.dislike,
-    delete_: store.comment.delete,
+    like: uS.Story('like', store.comment.like),
+    dislike: uS.Story('dislike', store.comment.dislike),
+    delete_: uS.Story('delete', store.comment.delete),
   }
 }
 </script>
