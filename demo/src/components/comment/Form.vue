@@ -25,9 +25,6 @@ const css = {
   err: 'text-red-800 mb-2',
 }
 
-uS.Story('add comment')
-uS.Story('invalid form')
-
 export default {
   data() {
     return { text: '', username: '', css, error: null }
@@ -38,11 +35,11 @@ export default {
       this.error = null
       if (!text || !username) {
         this.error = 'You must specify both a username and a comment'
-        uS.doStory('invalid form')
+        uS.doStory('invalid_form')
       } else {
         store.comment.add({ text, username })
         this.text = this.username = ''
-        uS.doStory('add comment')
+        uS.doStory('add_comment')
       }
     }
   }

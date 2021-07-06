@@ -1,18 +1,23 @@
 {
   "name": "@unrest/story",
-  "version": "1.0.0",
-  "main": "index.js",
+  "author": "Chris Cauley <cauley.chris@gmail.com>",
+  "version": "0.1.0",
+  "main": "dist/vue.common.js",
   "license": "MIT",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name @unrest/story src/index.js"
+    "build": "vue-cli-service build --target lib src/index.js",
+    "lint": "vue-cli-service lint"
   },
   "peerDependencies": {
+    "@popperjs/core": "^2.9.0",
     "@unrest/css": "^0.0.6",
     "vue": "^3.0.0"
   },
   "dependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/core": "^7.12.16",
+    "@unrest/css": "^0.0.6",
+    "@unrest/vue": "^0.1.0",
     "@vue/cli": "^4.5.11",
     "babel-plugin-transform-comment-to-assert": "^4.1.0",
     "classnames": "^2.2.6"

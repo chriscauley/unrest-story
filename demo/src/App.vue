@@ -12,8 +12,11 @@
 <script>
 import CommentForm from '@/components/comment/Form'
 import CommentList from '@/components/comment/List'
-import { StoryCard } from '@unrest/story'
+import story, { StoryCard } from '@unrest/story'
 import store from '@/store'
+
+import stories from '@/stories.yaml'
+story.register(stories)
 
 export default {
   components: { CommentForm, CommentList, StoryCard },

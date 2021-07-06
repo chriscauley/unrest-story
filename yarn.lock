@@ -2182,6 +2182,16 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.2.tgz#808c9fa7e4517274ed555fa158f2de4b4f468e71"
   integrity sha512-HrCIVMLjE1MOozVoD86622S7aunluLb2PJdPfb3nYiEtohm8mIB/vyv0Fd37AdeMFrTUQXEunw78YloMA3Qilg==
 
+"@unrest/css@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@unrest/css/-/css-0.0.6.tgz#7736b05a7ad36fc30bfe49eeebbf73344922046c"
+  integrity sha512-0RMTFBTLN1IGzPpCSoAXtjM/coa4ghBrr5VjD41F9PxaXchyNcT6wONe8gqkzsl9+k7glZWCR0HsET9Sz0Jtxg==
+
+"@unrest/vue@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@unrest/vue/-/vue-0.1.0.tgz#8d93e6643354569bb7d213354efb1b47084b0101"
+  integrity sha512-Q8aPhgPEfAb5avOByzLv/zpAafl/CXheadB5l5duBvKrNPEq0sshPxDhEGD2qvWfetsFQyK2Rfbgh9XxEyoKLA==
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.2.1.tgz#31624a7a505fb14da1d58023725a4c5f270e6a81"

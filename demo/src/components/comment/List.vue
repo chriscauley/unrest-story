@@ -37,9 +37,9 @@ export default {
     comments: store.comment.all
   },
   methods: {
-    like: uS.Story('like', store.comment.like),
-    dislike: uS.Story('dislike', store.comment.dislike),
-    delete_: uS.Story('delete', store.comment.delete),
+    like: uS.wrap('like', store.comment.like),
+    dislike: uS.wrap('dislike', store.comment.dislike),
+    delete_: uS.wrap('delete', store.comment.delete),
   }
 }
 </script>

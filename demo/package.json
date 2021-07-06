@@ -11,6 +11,7 @@
     "@popperjs/core": "^2.8.6",
     "@unrest/css": "^0.0.6",
     "@unrest/tailwind": "^0.0.8",
+    "classnames": "^2.3.1",
     "core-js": "^3.6.5",
     "json-loader": "^0.5.7",
     "vue": "^3.0.0",
