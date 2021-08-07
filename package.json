@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "vue-cli-service build --target lib src/index.js",
-    "lint": "vue-cli-service lint"
+    "lint": "eslint \"src/**/*\""
   },
   "peerDependencies": {
     "@popperjs/core": "^2.9.0",
@@ -14,33 +14,19 @@
     "vue": "^3.0.0"
   },
   "dependencies": {
-    "@babel/cli": "^7.13.0",
-    "@babel/core": "^7.12.16",
     "@unrest/css": "^0.0.6",
     "@unrest/vue": "^0.1.0",
     "@vue/cli": "^4.5.11",
-    "babel-plugin-transform-comment-to-assert": "^4.1.0",
     "classnames": "^2.2.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.12.16",
+    "@unrest/eslint-config": "^0.0.4",
     "@vue/cli-plugin-babel": "^4.5.11",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "eslint": "^7.20.0",
-    "eslint-plugin-vue": "^7.6.0"
+    "@vue/cli-service": "~4.5.0"
   },
   "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
+    "extends": "@unrest"
   }
 }
