@@ -1,0 +1,40 @@
+.flex-grow {
+  flex-grow: 1;
+}
+
+.comment-card {
+  @apply mt-16 m-auto p-2 rounded shadow bg-white;
+}
+
+.comment-form {
+  &__input {
+    @apply border mb-2 w-full;
+  }
+  &__button {
+    @apply p-2 border-gray-200 border rounded block;
+  }
+  &__error {
+    @apply text-red-800 mb-2;
+  }
+}
+
+.comment-list {
+  &__list {
+    @apply mb-8;
+  }
+  &__top {
+    @apply flex justify-between text-sm;
+  }
+  &__text {
+    @apply py-2 px-4 rounded border;
+  }
+  &__username {
+    @apply text-gray-400;
+  }
+  &__actions {
+    @apply flex select-none;
+  }
+  &__action {
+    @apply underline cursor-pointer mr-2 text-sm text-blue-400;
+  }
+}

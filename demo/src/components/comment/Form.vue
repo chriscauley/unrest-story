@@ -2,16 +2,16 @@
   <form @submit.prevent="submit">
     <label>
       <div>Username</div>
-      <input v-model="username" :class="css.input" />
+      <input v-model="username" class="comment-form__input" />
     </label>
     <label>
       <div>Comment</div>
-      <textarea v-model="text" :class="css.input" />
+      <textarea v-model="text" class="comment-form__input" />
     </label>
-    <div v-if="error" :class="css.err">
+    <div v-if="error" class="comment-form__error">
       {{ error }}
     </div>
-    <button :class="css.button">Save</button>
+    <button class="comment-form__button">Save</button>
   </form>
 </template>
 
@@ -19,15 +19,9 @@
 import store from '@/store'
 import uS from '@unrest/story'
 
-const css = {
-  input: 'border mb-2 w-full',
-  button: 'p-2 border-gray-200 border rounded block',
-  err: 'text-red-800 mb-2',
-}
-
 export default {
   data() {
-    return { text: '', username: '', css, error: null }
+    return { text: '', username: '', error: null }
   },
   methods: {
     submit() {

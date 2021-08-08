@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="max-width: 300px;" class="mt-16 m-auto p-2 rounded shadow bg-white">
+    <div style="max-width: 300px;" class="comment-card">
       {{ comment_count }} comments
       <comment-list />
       <comment-form />
@@ -16,7 +16,7 @@ import story, { StoryCard } from '@unrest/story'
 import store from '@/store'
 
 import stories from '@/stories.yaml'
-story.register(stories)
+console.log(story.register(stories))
 
 export default {
   components: { CommentForm, CommentList, StoryCard },
