@@ -5,7 +5,9 @@
   "main": "dist/story.common.js",
   "license": "MIT",
   "scripts": {
-    "build": "vue-cli-service build --target lib src/index.js --no-clean",
+    "build": "yarn build:css && yarn build:js",
+    "build:css": "postcss src/styles.scss -o dist/styles.css",
+    "build:js": "vue-cli-service build --target lib src/index.js --no-clean",
     "lint": "eslint \"src/**/*\""
   },
   "peerDependencies": {
@@ -24,7 +26,11 @@
     "@babel/core": "^7.12.16",
     "@unrest/eslint-config": "^0.0.4",
     "@vue/cli-plugin-babel": "^4.5.11",
-    "@vue/cli-service": "~4.5.0"
+    "@vue/cli-service": "~4.5.0",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-nested": "^5.0.6"
   },
   "eslintConfig": {
     "extends": "@unrest"

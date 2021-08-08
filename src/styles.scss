@@ -1,0 +1,15 @@
+/* TODO all below should be moved into a css file in ../src */
+.unrest-story {
+  &__branch {
+    margin-bottom: 0.5rem;
+  }
+  &__child {
+    margin-left: 1rem;
+  }
+  .text-success {
+    color: #276749;
+  }
+  .text-danger {
+    color: #9b2c2c;
+  }
+}
