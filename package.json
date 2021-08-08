@@ -1,7 +1,7 @@
 {
   "name": "@unrest/story",
   "author": "Chris Cauley <cauley.chris@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": "dist/story.common.js",
   "license": "MIT",
   "scripts": {
