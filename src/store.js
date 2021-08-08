@@ -1,36 +1,44 @@
 import { reactive } from 'vue'
-import { startCase } from 'lodash'
+import { startCase, set } from 'lodash'
 
 const state = reactive({
   stories: {},
-  bySlug: {},
+  byKey: {},
   did: {},
-  slugs: [],
+  keys: [],
   count: 0,
+  tree: {},
 })
 
-const doStory = (slug) => {
-  if (!state.bySlug[slug]) {
-    throw 'Unregistered story: ' + slug
+const doStory = (key) => {
+  if (!state.byKey[key]) {
+    throw 'Unregistered story: ' + key
   }
-  state.did[slug] = state.did[slug] + 1
+  state.did[key]++
 }
 
-const register = (obj) => {
+const register = (obj, path = []) => {
   if (Array.isArray(obj)) {
-    return obj.map(register)
+    obj.map((o) => register(o, [...path]))
+  } else if (typeof obj === 'string') {
+    const slug = obj
+    path = [...path, slug]
+    const key = path.join('.')
+    if (state.byKey[key]) {
+      // already registered (usually just hmr acting up)
+      return
+    }
+    const name = startCase(slug)
+    obj = { slug, key, name, path, __is_leaf: true }
+    state.keys.push(key)
+    state.byKey[key] = obj
+    state.did[key] = 0
+    set(state.tree, obj.path, obj)
+  } else {
+    Object.entries(obj).forEach(([key, value]) => {
+      register(value, [...path, key])
+    })
   }
-  if (typeof obj === 'string') {
-    obj = { slug: obj }
-  }
-  obj = {
-    name: startCase(obj.slug),
-    ...obj, // TODO deep clone?
-  }
-  state.slugs.push(obj.slug)
-  state.bySlug[obj.slug] = obj
-  state.did[obj.slug] = 0
-  return obj
 }
 
 export default {

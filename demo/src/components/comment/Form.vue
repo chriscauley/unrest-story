@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="submit">
+  <form @submit.prevent="submit" class="comment-form">
     <label>
       <div>Username</div>
       <input v-model="username" class="comment-form__input" />
@@ -29,11 +29,11 @@ export default {
       this.error = null
       if (!text || !username) {
         this.error = 'You must specify both a username and a comment'
-        uS.doStory('invalid_form')
+        uS.doStory('addComment.error')
       } else {
         store.comment.add({ text, username })
         this.text = this.username = ''
-        uS.doStory('add_comment')
+        uS.doStory('addComment.success')
       }
     }
   }

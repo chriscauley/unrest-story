@@ -2,11 +2,18 @@
   flex-grow: 1;
 }
 
+.app-content {
+  @apply bg-gray-300 flex items-center justify-center;
+}
+
 .comment-card {
-  @apply mt-16 m-auto p-2 rounded shadow bg-white;
+  @apply bg-white max-w-xs;
 }
 
 .comment-form {
+  input, textarea {
+    @apply px-2 py-1;
+  }
   &__input {
     @apply border mb-2 w-full;
   }
@@ -36,5 +43,15 @@
   }
   &__action {
     @apply underline cursor-pointer mr-2 text-sm text-blue-400;
+  }
+}
+
+/* TODO all below should be moved into a css file in ../src */
+.unrest-story {
+  &__branch {
+    @apply mb-2;
+  }
+  &__child {
+    @apply ml-4;
   }
 }

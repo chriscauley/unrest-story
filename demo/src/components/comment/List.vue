@@ -25,9 +25,9 @@ export default {
     comments: store.comment.all
   },
   methods: {
-    like: uS.wrap('like', store.comment.like),
-    dislike: uS.wrap('dislike', store.comment.dislike),
-    delete_: uS.wrap('delete', store.comment.delete),
+    like: uS.wrap('action.like', store.comment.like),
+    dislike: uS.wrap('action.dislike', store.comment.dislike),
+    delete_: uS.wrap('action.delete', store.comment.delete),
   }
 }
 </script>

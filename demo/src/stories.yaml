@@ -1,5 +1,7 @@
-- add_comment
-- invalid_form
-- like
-- dislike
-- delete
+addComment:
+  - success
+  - error
+action:
+  - like
+  - dislike
+  - delete

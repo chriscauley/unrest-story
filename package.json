@@ -2,10 +2,10 @@
   "name": "@unrest/story",
   "author": "Chris Cauley <cauley.chris@gmail.com>",
   "version": "0.1.0",
-  "main": "dist/vue.common.js",
+  "main": "dist/story.common.js",
   "license": "MIT",
   "scripts": {
-    "build": "vue-cli-service build --target lib src/index.js",
+    "build": "vue-cli-service build --target lib src/index.js --no-clean",
     "lint": "eslint \"src/**/*\""
   },
   "peerDependencies": {
