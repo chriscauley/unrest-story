@@ -17971,10 +17971,10 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/StoryCard.vue?vue&type=template&id=500ab350
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/StoryCard.vue?vue&type=template&id=606f416a
 
 const _hoisted_1 = {
-  class: "story-card"
+  class: "unrest-story"
 };
 const _hoisted_2 = {
   class: "unrest-floating-actions"
@@ -18008,7 +18008,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, ["branch", "slug"]);
   }), 128))])], 2)], 2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]);
 }
-// CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=template&id=500ab350
+// CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=template&id=606f416a
 
 // EXTERNAL MODULE: ./node_modules/@unrest/css/dist/index.js
 var dist = __webpack_require__("82c1");
