@@ -18038,14 +18038,36 @@ var lodash = __webpack_require__("2ef0");
 // CONCATENATED MODULE: ./src/store.js
 
 
-const state = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["reactive"])({
+const initial_state = {
   stories: {},
   byKey: {},
   did: {},
   keys: [],
   count: 0,
   tree: {}
-});
+};
+
+let save = () => {};
+
+let store_reset = () => {};
+
+const LS_KEY = '@unrest/story';
+
+if (typeof localStorage !== undefined) {
+  try {
+    const did = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+    initial_state.did = did;
+
+    save = () => localStorage.setItem(LS_KEY, JSON.stringify(state.did));
+
+    store_reset = () => localStorage.removeItem(LS_KEY);
+  } catch (_e) {
+    console.warn('Unable to load @unrest/story history error will be logged below');
+    console.error(_e);
+  }
+}
+
+const state = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["reactive"])(initial_state);
 
 const doStory = key => {
   if (!state.byKey[key]) {
@@ -18053,6 +18075,7 @@ const doStory = key => {
   }
 
   state.did[key]++;
+  save();
 };
 
 const register = (obj, path = []) => {
@@ -18078,7 +18101,7 @@ const register = (obj, path = []) => {
     };
     state.keys.push(key);
     state.byKey[key] = obj;
-    state.did[key] = 0;
+    state.did[key] = state.did[key] || 0;
     Object(lodash["set"])(state.tree, obj.path, obj);
   } else {
     Object.entries(obj).forEach(([key, value]) => {
@@ -18091,6 +18114,7 @@ const register = (obj, path = []) => {
   state,
   doStory,
   register,
+  reset: store_reset,
 
   wrap(name, func) {
     return function () {

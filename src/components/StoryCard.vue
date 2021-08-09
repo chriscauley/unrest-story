@@ -1,5 +1,5 @@
 <template>
-  <div class="story-card">
+  <div class="unrest-story">
     <div class="unrest-floating-actions">
       <button class="btn -primary" @click="toggle">
         <i class="fa fa-book mr-2" />
