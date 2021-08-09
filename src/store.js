@@ -20,7 +20,10 @@ if (typeof localStorage !== undefined) {
     const did = JSON.parse(localStorage.getItem(LS_KEY) || '{}')
     initial_state.did = did
     save = () => localStorage.setItem(LS_KEY, JSON.stringify(state.did))
-    reset = () => localStorage.removeItem(LS_KEY)
+    reset = () => {
+      state.did = {}
+      save()
+    }
   } catch (_e) {
     console.warn('Unable to load @unrest/story history error will be logged below')
     console.error(_e)

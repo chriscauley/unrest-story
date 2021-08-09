@@ -12,6 +12,7 @@
         <h4>User Stories</h4>
         <div>
           <story-tree v-for="(branch, slug) in tree" :branch="branch" :slug="slug" :key="slug" />
+          <button role="button" @click="reset" :class="css.button()">Reset</button>
         </div>
       </div>
     </div>
@@ -44,6 +45,7 @@ export default {
     toggle() {
       this.open = !this.open
     },
+    reset: store.reset,
   },
 }
 </script>

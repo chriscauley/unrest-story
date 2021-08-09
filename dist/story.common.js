@@ -17962,7 +17962,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/StoryCard.vue?vue&type=template&id=606f416a
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/StoryCard.vue?vue&type=template&id=daa5dc00
 
 const _hoisted_1 = {
   class: "unrest-story"
@@ -17997,9 +17997,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       slug: slug,
       key: slug
     }, null, 8, ["branch", "slug"]);
-  }), 128))])], 2)], 2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]);
+  }), 128)), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("button", {
+    role: "button",
+    onClick: _cache[3] || (_cache[3] = (...args) => $options.reset && $options.reset(...args)),
+    class: $data.css.button()
+  }, "Reset", 2)])], 2)], 2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]);
 }
-// CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=template&id=606f416a
+// CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=template&id=daa5dc00
 
 // EXTERNAL MODULE: ./node_modules/@unrest/css/dist/index.js
 var dist = __webpack_require__("82c1");
@@ -18060,7 +18064,10 @@ if (typeof localStorage !== undefined) {
 
     save = () => localStorage.setItem(LS_KEY, JSON.stringify(state.did));
 
-    store_reset = () => localStorage.removeItem(LS_KEY);
+    store_reset = () => {
+      state.did = {};
+      save();
+    };
   } catch (_e) {
     console.warn('Unable to load @unrest/story history error will be logged below');
     console.error(_e);
@@ -18192,8 +18199,9 @@ Treevue_type_script_lang_js.render = Treevue_type_template_id_1d42b2fe_render
   methods: {
     toggle() {
       this.open = !this.open;
-    }
+    },
 
+    reset: store.reset
   }
 });
 // CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=script&lang=js
