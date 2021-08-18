@@ -3,4 +3,14 @@ import store from './store'
 
 export { StoryCard }
 
-export default store
+export default {
+  install(app, stories) {
+    stories && store.register(stories)
+    app.config.globalProperties.$story = {
+      complete: store.doStory,
+      once: store.doOnce,
+    }
+  },
+  complete: store.doStory,
+  once: store.doOnce,
+}

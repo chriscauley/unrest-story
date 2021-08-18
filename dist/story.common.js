@@ -18050,28 +18050,29 @@ const initial_state = {
   count: 0,
   tree: {}
 };
-
-let save = () => {};
-
-let store_reset = () => {};
-
 const LS_KEY = '@unrest/story';
+let ls = {
+  getItem: key => ls._cache[key] || null,
+  setItem: (key, value) => ls._cache[key] = value,
+  _cache: {}
+};
 
 if (typeof localStorage !== undefined) {
-  try {
-    const did = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
-    initial_state.did = did;
+  ls = localStorage;
+}
 
-    save = () => localStorage.setItem(LS_KEY, JSON.stringify(state.did));
+const save = () => ls.setItem(LS_KEY, JSON.stringify(state.did));
 
-    store_reset = () => {
-      state.did = {};
-      save();
-    };
-  } catch (_e) {
-    console.warn('Unable to load @unrest/story history error will be logged below');
-    console.error(_e);
-  }
+const store_reset = () => {
+  state.did = {};
+  save();
+};
+
+try {
+  initial_state.did = JSON.parse(ls.getItem(LS_KEY) || '{}');
+} catch (_e) {
+  console.warn('Unable to load @unrest/story history error will be logged below');
+  console.error(_e);
 }
 
 const state = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["reactive"])(initial_state);
@@ -18117,9 +18118,23 @@ const register = (obj, path = []) => {
   }
 };
 
+const doOnce = (action, value) => {
+  const once_key = `${LS_KEY}/__once`;
+  const record = JSON.parse(ls.getItem(once_key) || '{}');
+
+  if (!action || record[action] === value) {
+    return;
+  }
+
+  record[action] = value;
+  ls.setItem(once_key, JSON.stringify(record));
+  doStory(action);
+};
+
 /* harmony default export */ var store = ({
   state,
   doStory,
+  doOnce,
   register,
   reset: store_reset,
 
@@ -18217,7 +18232,18 @@ StoryCardvue_type_script_lang_js.render = render
 
 
 
-/* harmony default export */ var src_0 = (store);
+/* harmony default export */ var src_0 = ({
+  install(app, stories) {
+    stories && store.register(stories);
+    app.config.globalProperties.$story = {
+      complete: store.doStory,
+      once: store.doOnce
+    };
+  },
+
+  complete: store.doStory,
+  once: store.doOnce
+});
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
 

@@ -10,24 +10,29 @@ const initial_state = {
   tree: {},
 }
 
-let save = () => {}
-let reset = () => {}
-
 const LS_KEY = '@unrest/story'
 
+let ls = {
+  getItem: (key) => ls._cache[key] || null,
+  setItem: (key, value) => (ls._cache[key] = value),
+  _cache: {},
+}
+
 if (typeof localStorage !== undefined) {
-  try {
-    const did = JSON.parse(localStorage.getItem(LS_KEY) || '{}')
-    initial_state.did = did
-    save = () => localStorage.setItem(LS_KEY, JSON.stringify(state.did))
-    reset = () => {
-      state.did = {}
-      save()
-    }
-  } catch (_e) {
-    console.warn('Unable to load @unrest/story history error will be logged below')
-    console.error(_e)
-  }
+  ls = localStorage
+}
+
+const save = () => ls.setItem(LS_KEY, JSON.stringify(state.did))
+const reset = () => {
+  state.did = {}
+  save()
+}
+
+try {
+  initial_state.did = JSON.parse(ls.getItem(LS_KEY) || '{}')
+} catch (_e) {
+  console.warn('Unable to load @unrest/story history error will be logged below')
+  console.error(_e)
 }
 
 const state = reactive(initial_state)
@@ -64,9 +69,21 @@ const register = (obj, path = []) => {
   }
 }
 
+const doOnce = (action, value) => {
+  const once_key = `${LS_KEY}/__once`
+  const record = JSON.parse(ls.getItem(once_key) || '{}')
+  if (!action || record[action] === value) {
+    return
+  }
+  record[action] = value
+  ls.setItem(once_key, JSON.stringify(record))
+  doStory(action)
+}
+
 export default {
   state,
   doStory,
+  doOnce,
   register,
   reset,
   wrap(name, func) {
