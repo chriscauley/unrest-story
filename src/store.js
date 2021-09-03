@@ -5,16 +5,19 @@ const initial_state = {
   stories: {},
   byKey: {},
   did: {},
+  did_list: [],
   keys: [],
   count: 0,
   tree: {},
 }
 
 const LS_KEY = '@unrest/story'
+const ONCE_KEY = `${LS_KEY}/__once`
 
 let ls = {
   getItem: (key) => ls._cache[key] || null,
   setItem: (key, value) => (ls._cache[key] = value),
+  removeItem: (key) => delete ls._cache[key],
   _cache: {},
 }
 
@@ -25,6 +28,7 @@ if (typeof localStorage !== undefined) {
 const save = () => ls.setItem(LS_KEY, JSON.stringify(state.did))
 const reset = () => {
   state.did = {}
+  ls.removeItem(ONCE_KEY)
   save()
 }
 
@@ -42,6 +46,7 @@ const doStory = (key) => {
     throw 'Unregistered story: ' + key
   }
   state.did[key]++
+  state.did_list.push(key)
   save()
 }
 
@@ -70,13 +75,12 @@ const register = (obj, path = []) => {
 }
 
 const doOnce = (action, value) => {
-  const once_key = `${LS_KEY}/__once`
-  const record = JSON.parse(ls.getItem(once_key) || '{}')
+  const record = JSON.parse(ls.getItem(ONCE_KEY) || '{}')
   if (!action || record[action] === value) {
     return
   }
   record[action] = value
-  ls.setItem(once_key, JSON.stringify(record))
+  ls.setItem(ONCE_KEY, JSON.stringify(record))
   doStory(action)
 }
 

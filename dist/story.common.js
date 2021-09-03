@@ -17962,7 +17962,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/StoryCard.vue?vue&type=template&id=daa5dc00
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/@vue/cli-plugin-babel/node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/StoryCard.vue?vue&type=template&id=2ff7dc9e
 
 const _hoisted_1 = {
   class: "unrest-story"
@@ -17970,28 +17970,47 @@ const _hoisted_1 = {
 const _hoisted_2 = {
   class: "unrest-floating-actions"
 };
+const _hoisted_3 = {
+  class: "unrest-story__toggle"
+};
 
-const _hoisted_3 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("i", {
+const _hoisted_4 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("i", {
+  class: "fa fa-ellipsis-h"
+}, null, -1);
+
+const _hoisted_5 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("i", {
   class: "fa fa-book mr-2"
 }, null, -1);
 
-const _hoisted_4 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("h4", null, "User Stories", -1);
+const _hoisted_6 = {
+  class: "unrest-story__short-list list-group"
+};
+
+const _hoisted_7 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("h4", null, "User Stories", -1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_story_tree = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("story-tree");
 
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", _hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", _hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("button", {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", _hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", _hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", _hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("button", {
+    class: $options.show_list_btn,
+    onClick: _cache[1] || (_cache[1] = $event => $options.showDidList())
+  }, [_hoisted_4], 2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("button", {
     class: "btn -primary",
-    onClick: _cache[1] || (_cache[1] = (...args) => $options.toggle && $options.toggle(...args))
-  }, [_hoisted_3, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.stats.completed) + " / " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.stats.total), 1)])]), $data.open ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+    onClick: _cache[2] || (_cache[2] = (...args) => $options.toggle && $options.toggle(...args))
+  }, [_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.stats.completed) + " / " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.stats.total), 1)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", _hoisted_6, [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($options.visible_did_list, key => {
+    return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+      class: "list-group-item",
+      key: key
+    }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(key), 1);
+  }), 128))])])]), $data.open ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
     key: 0,
     class: $data.css.modal.outer()
   }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
     class: $data.css.modal.mask(),
-    onClick: _cache[2] || (_cache[2] = (...args) => $options.toggle && $options.toggle(...args))
+    onClick: _cache[3] || (_cache[3] = (...args) => $options.toggle && $options.toggle(...args))
   }, null, 2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
     class: $data.css.modal.content.fullscreen()
-  }, [_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", null, [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($options.tree, (branch, slug) => {
+  }, [_hoisted_7, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", null, [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($options.tree, (branch, slug) => {
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_story_tree, {
       branch: branch,
       slug: slug,
@@ -17999,11 +18018,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8, ["branch", "slug"]);
   }), 128)), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("button", {
     role: "button",
-    onClick: _cache[3] || (_cache[3] = (...args) => $options.reset && $options.reset(...args)),
+    onClick: _cache[4] || (_cache[4] = (...args) => $options.reset && $options.reset(...args)),
     class: $data.css.button()
   }, "Reset", 2)])], 2)], 2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]);
 }
-// CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=template&id=daa5dc00
+// CONCATENATED MODULE: ./src/components/StoryCard.vue?vue&type=template&id=2ff7dc9e
 
 // EXTERNAL MODULE: ./node_modules/@unrest/css/dist/index.js
 var dist = __webpack_require__("82c1");
@@ -18046,14 +18065,17 @@ const initial_state = {
   stories: {},
   byKey: {},
   did: {},
+  did_list: [],
   keys: [],
   count: 0,
   tree: {}
 };
 const LS_KEY = '@unrest/story';
+const ONCE_KEY = `${LS_KEY}/__once`;
 let ls = {
   getItem: key => ls._cache[key] || null,
   setItem: (key, value) => ls._cache[key] = value,
+  removeItem: key => delete ls._cache[key],
   _cache: {}
 };
 
@@ -18065,6 +18087,7 @@ const save = () => ls.setItem(LS_KEY, JSON.stringify(state.did));
 
 const store_reset = () => {
   state.did = {};
+  ls.removeItem(ONCE_KEY);
   save();
 };
 
@@ -18083,6 +18106,7 @@ const doStory = key => {
   }
 
   state.did[key]++;
+  state.did_list.push(key);
   save();
 };
 
@@ -18119,15 +18143,14 @@ const register = (obj, path = []) => {
 };
 
 const doOnce = (action, value) => {
-  const once_key = `${LS_KEY}/__once`;
-  const record = JSON.parse(ls.getItem(once_key) || '{}');
+  const record = JSON.parse(ls.getItem(ONCE_KEY) || '{}');
 
   if (!action || record[action] === value) {
     return;
   }
 
   record[action] = value;
-  ls.setItem(once_key, JSON.stringify(record));
+  ls.setItem(ONCE_KEY, JSON.stringify(record));
   doStory(action);
 };
 
@@ -18194,11 +18217,25 @@ Treevue_type_script_lang_js.render = Treevue_type_template_id_1d42b2fe_render
   data() {
     return {
       css: dist_default.a,
-      open: false
+      open: false,
+      show_did_list: 0,
+      timeout: null
     };
   },
 
   computed: {
+    visible_did_list() {
+      return this.did_list.slice().reverse().slice(0, this.show_did_list);
+    },
+
+    did_list() {
+      return store.state.did_list;
+    },
+
+    show_list_btn() {
+      return ['btn', this.show_did_list ? '-secondary' : '-primary'];
+    },
+
     stats() {
       return {
         total: store.state.keys.length,
@@ -18211,7 +18248,18 @@ Treevue_type_script_lang_js.render = Treevue_type_template_id_1d42b2fe_render
     }
 
   },
+  watch: {
+    'did_list.length': function (_new, old) {
+      this.showDidList(this.show_did_list + _new - old);
+    }
+  },
   methods: {
+    showDidList(n) {
+      this.show_did_list = n === undefined ? this.did_list.length : n;
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => this.show_did_list = 0, 10000);
+    },
+
     toggle() {
       this.open = !this.open;
     },
